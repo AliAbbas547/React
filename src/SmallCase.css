@@ -1,0 +1,36 @@
+.container{
+    width:35%;
+    height: 180px;
+    box-shadow: 0 0 20px black;
+    border:2px solid black;
+    padding:20px;
+    background-color: rgb(222, 171, 30);
+    
+    margin:auto;
+    margin-top: 100px;
+    
+}
+.cont{
+    width:70%;
+    height: 60px;
+    border:2px solid black;
+    color:blue;
+    font-size: 20px;
+    background-color: aqua;
+    border-radius: 20px;
+    
+
+}
+.cont1{
+    height: 40px;
+    border:2px solid black;
+    border-radius: 50px;
+    background-color: chartreuse;
+    
+
+}
+.cont2{
+    color:rgb(9, 8, 8);
+    font-weight: bolder;
+    font-size: 20px;
+}
