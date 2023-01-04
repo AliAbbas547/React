@@ -7,33 +7,39 @@ class User extends Component {
     this.state = {
       email: "",
       Profile: "",
+      data:""
     };
   }
-
+  submitHandler= (e)=>{
+    e.preventDefault();
+    for(let i=0; i<5; i++){
+    console.log(e.target.name[i])
+  }
+  }
   render() {
-    console.log(this.state);
+    
     return (
       <div className="conatiner">
-        <form>
+        <form onSubmit={(e)=>this.submitHandler(e)}>
           <fieldset className="conatiner1">
             <legend>UserData</legend>
             firstName:
-            <input type="text" />
+            <input type="text" required />
             <br />
             <br />
             lastName:
-            <input type="text" />
+            <input type="text" required />
             <br />
             <br />
             Gender:
-            <input type="radio" value="male" name="gender" />
+            <input type="radio" value="male" name="gender" required />
             Male
-            <input type="radio" value="female" name="gender" />
+            <input type="radio" value="female" name="gender" required />
             female
             <br />
             <br />
             Country:
-            <select>
+            <select >
               <option>please select Country</option>
               <option>India</option>
               <option>Russia</option>
@@ -54,15 +60,16 @@ class User extends Component {
             <br />
             <br />
             ProfileImage:
-            <input type="file" name="profileImage" onChange={(e) => this.setState({ Profile: e.target.value })} />
+            <input type="file" name="profileImage" onChange={(e) => this.setState({ Profile: e.target.value })}  required />
             <br />
             <br />
             Email:
             <input
               type="email"
               name="email"
-              onChange={(e) => this.setState({ email: e.target.value })}
+              onChange={(e) => this.setState({ email: e.target.value })} required
             />
+        
             <br />
             <br />
             <input className="submit" type="submit" name="submit" />
