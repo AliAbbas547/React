@@ -15,15 +15,17 @@ useEffect(()=>{
 })
 const getNewFact= ()=>{
     axios.get("https://catfact.ninja/fact").then((response)=>{
-     console.log("response",response.data.fact)
+     console.log(response.data.fact)
      SetCatFact(response.data.fact)
     })};
 
 
   return (
     <div>
-        <p onClick={(e)=> SetCounter(counter +1)}>this is the Counter  {counter} </p>
-        <h1 onClick={(e)=> SetDec(dec -1)}>this is decrement {dec}</h1>
+        <h1>this is the Counter  {counter} </h1>
+        <h1> this is Decreased Counter {dec}</h1>
+        <button onClick={(e)=> SetCounter(counter +1)}>increased</button>
+        <button onClick={(e)=> SetDec(dec -1)}>Decreased</button>
         <br/>
         <br/>
         <button onClick={()=>getNewFact()}>get new Fact  {catFact}</button>

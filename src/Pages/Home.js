@@ -9,6 +9,7 @@ function Home() {
         <div> <a href="/SmallCase">go the Changing the Case</a></div>
         <div><a href="/User">go to User Login</a>|</div>
         <div><a href="/App">go to App</a></div>
+        <div> <a href="/Man">go  to Man</a></div>
       
     </div>
   )

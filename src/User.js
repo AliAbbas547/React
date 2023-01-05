@@ -6,40 +6,42 @@ class User extends Component {
     super();
     this.state = {
       email: "",
-      Profile: "",
-      data:""
+      Profile: "",  
+      fname:"",
+      lname:"",
+      country:"",
+      gender:"",
+      hobbies:""
+
     };
   }
-  submitHandler= (e)=>{
-    e.preventDefault();
-    for(let i=0; i<5; i++){
-    console.log(e.target.name[i])
-  }
-  }
-  render() {
+    render() {
     
     return (
       <div className="conatiner">
-        <form onSubmit={(e)=>this.submitHandler(e)}>
+        <form onSubmit={(e)=>{
+          e.preventDefault();
+          console.log("submitted")
+        }}>
           <fieldset className="conatiner1">
             <legend>UserData</legend>
             firstName:
-            <input type="text" required />
+            <input type="text" onChange={(e) => this.setState({ fname: e.target.value })} required />
             <br />
             <br />
             lastName:
-            <input type="text" required />
+            <input type="text"  onChange={(e) => this.setState({lname: e.target.value })} required />
             <br />
             <br />
             Gender:
-            <input type="radio" value="male" name="gender" required />
+            <input type="radio" value="male" name="gender" onChange={(e) => this.setState({ gender: e.target.value })} required />
             Male
             <input type="radio" value="female" name="gender" required />
             female
             <br />
             <br />
             Country:
-            <select >
+            <select onChange={(e) => this.setState({ country: e.target.value })} >
               <option>please select Country</option>
               <option>India</option>
               <option>Russia</option>
@@ -49,7 +51,7 @@ class User extends Component {
             <br />
             <br />
             Hobbies:
-            <input type="checkbox" name="hobbies[]" />
+            <input onChange={(e) => this.setState({ hobbies: e.target.value })} type="checkbox" name="hobbies[]" />
             Dancing
             <input type="checkbox" name="hobbies[]" />
             Singing
@@ -76,6 +78,17 @@ class User extends Component {
             <input className="submit" type="reset" name="reset" />
           </fieldset>
         </form>
+        
+      
+            fname:{this.state.fname} <br/>
+            lname:{this.state.lname} <br/>
+            profile:{this.state.Profile} <br/>
+            email:{this.state.email} <br/>
+            country:{this.state.country} <br/>
+            gender:{this.state.gender}<br/>
+            hobbies:{this.state.hobbies}
+          
+      
       </div>
     );
   }
